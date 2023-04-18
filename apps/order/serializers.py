@@ -13,6 +13,7 @@ class OrderSerializer(serializers.ModelSerializer):
     order_items = OrderItemSerializer(many=True, write_only=True)
 
     class Meta:
+        model = Order
         fields = '__all__'
         read_only_fields = ['total_cost', 'created_at', 'user','updated_at','status']
 

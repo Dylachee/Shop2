@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from slugify import slugify
 from datetime import datetime
-
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 User = get_user_model()
 
@@ -37,8 +38,6 @@ class ProductImage(models.Model):
 
     def __str__(self) -> str:
         return f'image to {self.product.title}'
-
-
 
 
 
