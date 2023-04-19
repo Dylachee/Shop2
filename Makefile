@@ -3,3 +3,6 @@ run:
 migrate:
 	python3 manage.py makemigrations
 	python3 manage.py migrate
+
+kill:
+	sudo fuser -k 8000/tcp
